@@ -1,18 +1,21 @@
-#ifndef CJoueur_H_INCLUDED
-#define CJoueur_H_INCLUDED
+#ifndef JOUEUR_H
+#define JOUEUR_H
 
-#include"cUnite.hpp"
+#include <iostream>
+#include <vector>
+#include "cUnite.hpp"
 
-class Joueur {
-	protected:
-	int m_pieceOr;
-	bool monTour;
-	Base b;
-	std::vector<Unite> sesunités;
-	
-	public:
-		Joueur(int piece): m_pieceOr(piece){};
-    		int getPieceOr(){return m_pieceOr;}
+
+class Joueur
+{
+    std::string m_nom;
+    std::vector<Unite> m_sesUnites;
+    int m_sesPieces;
+
+    public:
+        Joueur(std::string nom):m_nom(nom),m_sesPieces(8){};
+
+
 };
 
-#endif
+#endif // JOUEUR_H

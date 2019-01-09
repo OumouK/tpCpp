@@ -2,7 +2,7 @@
 #define JEU_H
 
 
-#include "cJoueur.h"
+#include "cJoueur.hpp"
 
 
 class Jeu
@@ -13,7 +13,7 @@ class Jeu
 
 
     public:
-        Jeu(Joueur a, Joueur b):m_a(a),m_b(b){m_sesCases[0]=new Base(a);m_sesCases[11]=new Base(b);};
+        Jeu(Joueur a, Joueur b):m_a(a),m_b(b){};
         virtual ~Jeu();
 };
 

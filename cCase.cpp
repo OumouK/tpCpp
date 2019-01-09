@@ -1,4 +1,5 @@
-#include "cCase.h"
+#include "cCase.hpp"
+#include "cUnite.hpp"
 
 bool Case::estOccupee(){
     return m_occupee;
@@ -7,10 +8,10 @@ void Case::setOccupee(bool b){
    m_occupee=b;
 }
 
-void Case::setUnite(Unite u){
-    m_sonUnite=u;
+void Case::setUnite(Unite * u){
+    ptr_sonUnite=u;
 }
 
-Unite Case::getUnite(){
-    return m_sonUnite;
+Unite* Case::getUnite(){
+    return ptr_sonUnite;
 }
