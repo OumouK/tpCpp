@@ -1,15 +1,26 @@
-#ifndef CAire_H_INCLUDED
-#define CAire_H_INCLUDED
+#ifndef JEU_H
+#define JEU_H
 
-#include"cUnite.hpp"
+#include "cCase.hpp"
 
-class Aire {
-	
-	std::vector<Case> sesCase;
-	
-	public:
-		Aire(): ){};
-    		//int getPieceOr(){return m_pieceOr;}
+class Aire
+{
+   // Joueur m_a;
+    //Joueur m_b;
+    Case m_sesCases[12];
+
+
+    public:
+        //TODO: aire avec un seul joueur et lautre cest lordi
+        //Aire(Joueur a, Joueur b):m_a(a),m_b(b){initCases();};
+        Aire(){initCases();}
+        Case getCase(int i);
+        void initCases();
+        void afficheJeu();
+        //void creeUnite(Joueur j, Unite u);
+
+
 };
 
-#endif
+#endif // JEU_H
+

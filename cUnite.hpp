@@ -15,11 +15,12 @@ protected:
     int m_pointVie;
     int m_pointAttaque;
     int m_position;
+    std::string m_sonType;
     std::vector<int> m_portee; //A VOIR
 
 public:
-    Unite():m_prix(0),m_pointVie(0),m_pointAttaque(0),m_position(0){ m_portee= {0};};
-    Unite(int p, int ptV, int ptAt):m_prix(p),m_pointVie(ptV), m_pointAttaque(ptAt),m_position(0){ m_portee= {0};};
+    Unite():m_prix(0),m_pointVie(0),m_pointAttaque(0),m_position(0),m_sonType("Unite"){ m_portee= {0};};
+    Unite(int p, int ptV, int ptAt, std::string type):m_prix(p),m_pointVie(ptV), m_pointAttaque(ptAt),m_position(0), m_sonType(type){ m_portee= {0};};
     int getPrix();
     int getPtV();
     int getPtAt();
@@ -30,7 +31,8 @@ public:
     void setPosition(int p);
     std::vector<int> getPortee();
     void attaquer(Case & c);
-    void avancer();
+    void avancer(int p);
+    void affiche();
 };
 
 #endif // UNITE_H_INCLUDED

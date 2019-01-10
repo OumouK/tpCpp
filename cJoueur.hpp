@@ -4,16 +4,27 @@
 #include <iostream>
 #include <vector>
 #include "cUnite.hpp"
+#include "cAire.hpp"
 
 
 class Joueur
 {
+    Aire *aire;
     std::string m_nom;
     std::vector<Unite> m_sesUnites;
     int m_sesPieces;
+    int m_ptVie;
+    bool m_tour;
+    Case m_saBase;
 
     public:
-        Joueur(std::string nom):m_nom(nom),m_sesPieces(8){};
+        Joueur(std::string nom,int i, Aire *a): aire(a),m_nom(nom),m_sesPieces(8),m_ptVie(100),m_tour(false),m_saBase(i){};
+        bool estTour();
+        void setTour();
+        void setBase(Case c);
+        Case getBase();
+        void creeUnite(Unite u);
+        void avancer(Unite u);
 
 
 };

@@ -1,12 +1,19 @@
 #include <iostream>
-#include <vector>
+#include "cAire.hpp"
 #include "cFantassin.hpp"
+#include "cJoueur.hpp"
+using namespace std;
 
 int main()
 {
-    //std::vector<int> v{1,2,3};
-    //int i=v.at(0);
-    //std::cout<<i;
-    //Fantassin f();
+    //cout << "Hello world!" << endl;
+    Aire *a=new Aire();
+
+    Joueur o("Oumou",0, a);
+    Joueur c("Chloe",11, a);
+
+    Fantassin f;
+    o.creeUnite(f);
+    a->afficheJeu();
     return 0;
 }

@@ -30,3 +30,14 @@ void Unite::setPtAt(int p){
 void Unite::setPosition(int p){
     m_position=p;
 }
+
+void Unite::affiche(){
+    std::cout << m_sonType << std::endl;
+
+}
+
+void Unite::avancer(int p){
+    m_position+=p;
+}
+
+
