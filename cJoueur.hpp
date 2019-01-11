@@ -16,18 +16,22 @@ class Joueur
     int m_ptVie;
     bool m_tour;
     int m_saBase;
+    int pas;
 
     public:
-        Joueur(std::string nom,int i, Aire *a): aire(a),m_nom(nom),m_sesPieces(16),m_ptVie(100),m_tour(false),m_saBase(i){//m_sesUnites = vector<Unite*>(0);
-        };
-        ~Joueur(){}
+        Joueur(std::string nom,int i, Aire *a): aire(a),m_nom(nom),m_sesPieces(160),m_ptVie(100),m_tour(false),m_saBase(i){ if(i==0) {pas=1;} else{
+        pas=-1;}};
+        ~Joueur(){/*delete aire;*/}
         bool estTour();
         void setTour();
         void setBase(int c);
         int getBase();
+        std::vector<Unite*> getUnites();
         void creeUnite(Unite* u);
         void avancer(Unite* u);
-        void attaquer(Unite* u);
+        void attaquer();
+        void miseAJour();
+        void ordonne();
 
 
 };

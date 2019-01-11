@@ -15,9 +15,6 @@ class Aire
         //TODO: aire avec un seul joueur et lautre cest lordi
         //Aire(Joueur a, Joueur b):m_a(a),m_b(b){initCases();};
         Aire(){initCases();}
-        ~Aire(){//delete m_sesCases;
-        }
-      
         Case* getCase(int i);
         void initCases();
         void afficheJeu();

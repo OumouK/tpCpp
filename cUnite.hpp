@@ -5,6 +5,7 @@
 #include <iostream>
 #include "cCase.hpp"
 
+
 class Case;
 
 
@@ -31,7 +32,7 @@ public:
     void setPtAt(int p);
     void setPosition(int p);
     std::vector<int> getPortee();
-    void attaquer();
+    //void attaquer(Aire * a, int pas);
     void avancer(int p);
     void affiche();
 };

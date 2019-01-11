@@ -2,6 +2,10 @@
 #include "cUnite.hpp"
 
 
+Case::~Case(){
+    delete ptr_sonUnite;
+}
+
 bool Case::estOccupee(){
     return m_occupee;
 }
@@ -17,11 +21,10 @@ void Case::setPosition(int p){
 }
 
 void Case::setUnite(Unite * u){
-    std::cout<<"on a mis l'unite"<<m_occupee<<std::endl;
-    ptr_sonUnite=u;
+     ptr_sonUnite=u;
     u->setPosition(m_saPosition);
     m_occupee=true;
-    std::cout<<"on a mis l'unite"<<m_occupee<<std::endl;
+
 
 }
 

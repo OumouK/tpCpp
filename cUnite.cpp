@@ -46,5 +46,17 @@ void Unite::avancer(int p){
     m_position+=p;
 }
 
+/*void Unite::attaquer(Aire * a, int pas){
+std::cout<<"j'attaque "<<m_position<<std::endl;
+if(a[m_position+pas]->estOccupee()){
+        Unite* ptr_ennemi=a[m_position+pas]->getUnite();
+        ptr_ennemi->setPtV(ptr_ennemi->getPtV()-m_pointAttaque);
+        if(ptr_ennemi->getPtV()<=0){
+            delete ptr_ennemi;
+        }
+}
+
+}*/
+
 
 

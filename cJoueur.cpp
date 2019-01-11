@@ -1,4 +1,5 @@
 #include "cJoueur.hpp"
+#include <stdlib.h>
 
 void Joueur::setTour(){
     m_tour=true;
@@ -12,12 +13,12 @@ bool Joueur::estTour(){
 void Joueur::creeUnite(Unite* u){
 
     if(!aire->getCase(m_saBase)->estOccupee() && m_sesPieces>u->getPrix()){
-            std::cout<<"Joueur cree lunite"<<std::endl;
+
         m_sesPieces-=u->getPrix();
 
         m_sesUnites.push_back(u);
         aire->getCase(m_saBase)->setUnite(u);
-        std::cout<<aire->getCase(m_saBase)->estOccupee()<<std::endl;
+
     }
 
 
@@ -33,23 +34,61 @@ int Joueur::getBase(){
 }
 
 void Joueur::avancer(Unite* u){
-    int pas;
-    if(m_tour){
-            std::cout<<"cest son tour"<<std::endl;
-        if(aire->getCase(m_saBase)->getPosition()==0 ){
+    //int pas;
+    //if(m_tour){
+
+        /*if(aire->getCase(m_saBase)->getPosition()==0 ){
                 pas=1;
 
         }
         if(aire->getCase(m_saBase)->getPosition()==11){
              std::cout<<"on est la"<<std::endl;
              pas=-1;
-        }
+        }*/
         aire->avancer(u, pas);
 
+       // }
+}
+
+void Joueur::attaquer(){
+    //l'unite la plus proche de la base du joueur courant attaque
+    int distMax=15;
+    Unite * uniteProche=NULL;
+    for(Unite * u:m_sesUnites){
+            int distActu=std::abs(u->getPosition()-m_saBase);
+        if(distActu <distMax){
+            distMax=distActu;
+            uniteProche=u;
+        }
+    }
+    //uniteProche->attaquer(aire, pas);
+
+
+if(aire->getCase(uniteProche->getPosition()+pas)->estOccupee()){
+        std::cout<<"j'attaque "<<uniteProche->getPosition()<<std::endl;
+        Unite* ptr_ennemi=aire->getCase(uniteProche->getPosition()+pas)->getUnite();
+        ptr_ennemi->setPtV(ptr_ennemi->getPtV()-2*uniteProche->getPtAt());
+
+        if(ptr_ennemi->getPtV()<=0){
+
+            aire->getCase(ptr_ennemi->getPosition())->deleteUnite();
+
+            //delete ptr_ennemi;
         }
 }
 
-void Joueur::attaquer(Unite* u){
 
+}
 
+void Joueur::miseAJour(){
+
+    for(size_t i=0;i<m_sesUnites.size();i++){
+         if(m_sesUnites[i]->getPtV()<=0){
+            m_sesUnites.erase(m_sesUnites.begin()+i);
+        }
+    }
+}
+
+std::vector<Unite*> Joueur::getUnites(){
+    return m_sesUnites;
 }

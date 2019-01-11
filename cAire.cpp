@@ -25,7 +25,6 @@ Case* Aire::getCase(int i){
 void Aire::avancer(Unite * u, int pas){
     int posActuelle=u->getPosition(); //case actuelle de l'unite
     int next=posActuelle+pas; //case qu'elle souhaite atteindre
-     std::cout<<posActuelle<<next<<std::endl;
     if(!getCase(next)->estOccupee() && next!=0 && next!=11){ //la case suivante nest pas occupee et n'est pas une base
          getCase(posActuelle)->deleteUnite(); //on supprime l'unite de la case où elle etait
          u->avancer(pas);
@@ -35,18 +34,4 @@ void Aire::avancer(Unite * u, int pas){
         std::cout<<"ne peut pas avancer"<<std::endl;
     }
 }
-/*
-void Aire::creeUnite(Joueur j,Unite u){
-    if(!j.getBase().estOccupee()){
-        if(j.creeUnite(u)){
-            m_sesCases[j.getBase().getPosition()].setUnite(&u);
-        }
-
-    }
-}
-
-void Aire::avancer(Joueur j, Unite u){
-
-
-}*/
 
