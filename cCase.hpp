@@ -21,6 +21,7 @@ class Case
         int getPosition();
         void setPosition(int p);
         void setUnite(Unite* u);
+        void deleteUnite();
         Unite* getUnite();
         void afficheCase();
 

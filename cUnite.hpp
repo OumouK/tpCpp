@@ -17,10 +17,11 @@ protected:
     int m_position;
     std::string m_sonType;
     std::vector<int> m_portee; //A VOIR
+    //Joueur m_sonJoueur;
 
 public:
-    Unite():m_prix(0),m_pointVie(0),m_pointAttaque(0),m_position(0),m_sonType("Unite"){ m_portee= {0};};
-    Unite(int p, int ptV, int ptAt, std::string type):m_prix(p),m_pointVie(ptV), m_pointAttaque(ptAt),m_position(0), m_sonType(type){ m_portee= {0};};
+    Unite():m_prix(0),m_pointVie(0),m_pointAttaque(0),m_position(0),m_sonType("Unite"),m_portee({0}){}/*{ m_portee= {0};}*/;
+    Unite(int p, int ptV, int ptAt, std::string type):m_prix(p),m_pointVie(ptV), m_pointAttaque(ptAt),m_position(-1), m_sonType(type),m_portee({0}){};
     int getPrix();
     int getPtV();
     int getPtAt();
@@ -30,7 +31,7 @@ public:
     void setPtAt(int p);
     void setPosition(int p);
     std::vector<int> getPortee();
-    void attaquer(Case & c);
+    void attaquer();
     void avancer(int p);
     void affiche();
 };

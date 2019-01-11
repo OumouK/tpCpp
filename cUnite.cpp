@@ -5,6 +5,10 @@
 int Unite::getPrix(){
     return m_prix;
 }
+
+int Unite::getPosition(){
+    return m_position;
+}
 int Unite::getPtV(){
     return m_pointVie;
 }
@@ -31,6 +35,8 @@ void Unite::setPosition(int p){
     m_position=p;
 }
 
+
+
 void Unite::affiche(){
     std::cout << m_sonType << std::endl;
 
@@ -39,5 +45,6 @@ void Unite::affiche(){
 void Unite::avancer(int p){
     m_position+=p;
 }
+
 
 
