@@ -18,8 +18,9 @@ class Joueur
     int m_saBase;
 
     public:
-        Joueur(std::string nom,int i, Aire *a): aire(a),m_nom(nom),m_sesPieces(16),m_ptVie(100),m_tour(false),m_saBase(i){};
-        ~Joueur(){delete aire;}
+        Joueur(std::string nom,int i, Aire *a): aire(a),m_nom(nom),m_sesPieces(16),m_ptVie(100),m_tour(false),m_saBase(i){//m_sesUnites = vector<Unite*>(0);
+        };
+        ~Joueur(){}
         bool estTour();
         void setTour();
         void setBase(int c);

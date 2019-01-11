@@ -2,10 +2,6 @@
 #include "cUnite.hpp"
 
 
-Case::~Case(){
-    delete ptr_sonUnite;
-}
-
 bool Case::estOccupee(){
     return m_occupee;
 }

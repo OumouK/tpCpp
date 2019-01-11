@@ -9,10 +9,9 @@ int main()
 {
     //cout << "Hello world!" << endl;
     Aire *a=new Aire();
-
+    
     Joueur o("Oumou",0, a);
     Joueur c("Chloe",11, a);
-
     Fantassin f;
     Archer archer;
     o.creeUnite(&f);
@@ -23,5 +22,8 @@ int main()
     c.setTour();
     c.avancer(&archer);
     a->afficheJeu();
+    
+       delete a;
+    cout << "bonjour" << endl;
     return 0;
 }
