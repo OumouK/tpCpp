@@ -28,10 +28,17 @@ class Joueur
         int getBase();
         std::vector<Unite*> getUnites();
         void creeUnite(Unite* u);
+        void creeUnite();
         void avancer(Unite* u);
+        void phase2();
+        void phase3();
         void attaquer();
         void miseAJour();
-        void ordonne();
+        void ordonneProche();
+        void ordonneLoin();
+        void initPhase();
+        bool tentativeAtt(Unite* u, int n);
+
 
 
 };

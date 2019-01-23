@@ -6,6 +6,10 @@ int Unite::getPrix(){
     return m_prix;
 }
 
+std::string Unite::getType(){
+    return m_sonType;
+}
+
 int Unite::getPosition(){
     return m_position;
 }
@@ -14,6 +18,10 @@ int Unite::getPtV(){
 }
 int Unite::getPtAt(){
     return m_pointAttaque;
+}
+
+int Unite::getNbEssais(){
+    return m_nbEssais;
 }
 
 std::vector<int> Unite::getPortee(){
@@ -35,7 +43,13 @@ void Unite::setPosition(int p){
     m_position=p;
 }
 
+void Unite::setBase(int b){
+    m_base=b;
+}
 
+int Unite::getBase(){
+    return m_base;
+}
 
 void Unite::affiche(){
     std::cout << m_sonType << std::endl;
@@ -44,6 +58,15 @@ void Unite::affiche(){
 
 void Unite::avancer(int p){
     m_position+=p;
+}
+
+void Unite::setAttaque(bool b){
+    attaque=b;
+
+}
+
+bool Unite::getAttaque(){
+    return attaque;
 }
 
 /*void Unite::attaquer(Aire * a, int pas){

@@ -6,7 +6,7 @@ void Aire::initCases(){
 
     for(int i=0;i<12;i++){
         Case* c=new Case(i);
-        m_sesCases[i]=c;
+        m_sesCases.push_back(c);
     }
 
 }
@@ -20,6 +20,10 @@ void Aire::afficheJeu(){
 
 Case* Aire::getCase(int i){
     return m_sesCases[i];
+}
+
+std::vector<Case*> Aire::getSesCases(){
+    return m_sesCases;
 }
 
 void Aire::avancer(Unite * u, int pas){

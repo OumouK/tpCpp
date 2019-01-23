@@ -7,26 +7,37 @@ using namespace std;
 
 int main()
 {
-    //cout << "Hello world!" << endl;
+    std::cout << "Hello world!" << endl;
     Aire *a=new Aire();
 
     Joueur o("Oumou",0, a);
     Joueur c("Chloe",11, a);
     //c.setTour();
+
     Fantassin f;
-    Archer archer;
+    Archer archer, archer2;
     Fantassin f2;
     c.creeUnite(&f);
-    c.avancer(&f);
+    std::cout<<"1"<<std::endl;
+    //c.phase2();
+     o.creeUnite(&archer);
+    //std::cout<<"2"<<std::endl;
+    o.phase2();
+    o.creeUnite(&f2);
 
-    o.creeUnite(&archer);
-    o.avancer(&archer);
-    while(f.getPosition()!=2){
-            c.avancer(&f);
-    }
+   //o.creeUnite(&archer);
+   o.phase2();
+  //  o.avancer(&archer);
+
+    //while(f.getPosition()!=2){
+           // c.avancer(&f);
+    //}
+    //c.attaquer();
+    //c.avancer(&f2);
+    //c.creeUnite(&archer2);
  std::cout<<"taille av delete " <<o.getUnites().size()<<std::endl;
-    c.attaquer();
-    o.miseAJour();
+
+    //o.miseAJour();
     std::cout<<"taille ap delete " <<o.getUnites().size()<<std::endl;
 
     /*c.setTour();
@@ -36,5 +47,6 @@ int main()
     c.setTour();
     c.avancer(&archer);*/
     a->afficheJeu();
+    delete(a);
     return 0;
 }

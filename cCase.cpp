@@ -3,7 +3,7 @@
 
 
 Case::~Case(){
-    delete ptr_sonUnite;
+    //delete ptr_sonUnite;
 }
 
 bool Case::estOccupee(){
