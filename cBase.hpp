@@ -2,14 +2,16 @@
 #define CBASE_H
 
 #include "cCase.hpp"
-#include "cJoueur.hpp"
 
 class Base : public Case
 {
-    Joueur m_sonJoueur;
-    public:
-        Base(int i, Joueur j): Case(i),m_sonJoueur(j){};
-
+    int m_pointVie;
+public:
+    Base(int pt, int i): Case(i), m_pointVie(pt) {};
+    ~Base(){};
+    void afficheCase();
+    int getPtV();
+    void setPtV(int p);
 
 };
 

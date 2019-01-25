@@ -10,7 +10,8 @@
 class Case;
 
 
-class Unite{
+class Unite
+{
 
 protected:
     int m_prix;
@@ -19,15 +20,13 @@ protected:
     int m_position;
     int m_base;
     std::string m_sonType;
-    std::vector<int> m_portee; //A VOIR
+    bool attaque; //dire si l'unite a attaque ou pas
+    int m_nbEssais;
 
-     bool attaque; //dire si l'unite a attaque ou pas
-     int m_nbEssais;
-    //Joueur m_sonJoueur;
 
 public:
-    Unite():m_prix(0),m_pointVie(0),m_pointAttaque(0),m_position(0),m_base(0),m_sonType("Unite"),m_portee({0}),attaque(false), m_nbEssais(0){}/*{ m_portee= {0};}*/;
-    Unite(int p, int ptV, int ptAt, std::string type, int n):m_prix(p),m_pointVie(ptV), m_pointAttaque(ptAt),m_position(-1),m_base(-1), m_sonType(type),m_portee({0}), attaque(false), m_nbEssais(n){};
+    Unite():m_prix(0),m_pointVie(0),m_pointAttaque(0),m_position(0),m_base(0),m_sonType("Unite"),attaque(false), m_nbEssais(0) {}/*{ m_portee= {0};}*/;
+    Unite(int p, int ptV, int ptAt, std::string type, int n):m_prix(p),m_pointVie(ptV), m_pointAttaque(ptAt),m_position(-1),m_base(-1), m_sonType(type), attaque(false), m_nbEssais(n) {};
     int getPrix();
     int getPtV();
     int getPtAt();
@@ -40,10 +39,9 @@ public:
     void setPtAt(int p);
     void setPosition(int p);
     void setBase(int b);
+    void setType(std::string s);
     void setAttaque(bool b);
     bool getAttaque();
-    std::vector<int> getPortee();
-    //void attaquer(Aire * a, int pas);
     void avancer(int p);
     void affiche();
 };

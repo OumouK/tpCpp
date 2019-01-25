@@ -1,40 +1,49 @@
 #include "cAire.hpp"
 
-
-
-void Aire::initCases(){
-
-    for(int i=0;i<12;i++){
+void Aire::initCases()
+{
+    Base* b=new Base(100, 0);
+    m_sesCases.push_back(b);
+    for(int i=1; i<11; i++)
+    {
         Case* c=new Case(i);
         m_sesCases.push_back(c);
     }
-
+    Base* b2=new Base(100, 11);
+    m_sesCases.push_back(b2);
 }
 
-void Aire::afficheJeu(){
-    for(int i=0;i<12;i++){
+void Aire::afficheJeu()
+{
+    for(int i=0; i<12; i++)
+    {
         m_sesCases[i]->afficheCase();
-
-  }
+        std::cout <<std::endl;
+    }
 }
 
-Case* Aire::getCase(int i){
+Case* Aire::getCase(int i)
+{
     return m_sesCases[i];
 }
 
-std::vector<Case*> Aire::getSesCases(){
+std::vector<Case*> Aire::getSesCases()
+{
     return m_sesCases;
 }
 
-void Aire::avancer(Unite * u, int pas){
+void Aire::avancer(Unite * u, int pas)
+{
     int posActuelle=u->getPosition(); //case actuelle de l'unite
     int next=posActuelle+pas; //case qu'elle souhaite atteindre
-    if(!getCase(next)->estOccupee() && next!=0 && next!=11){ //la case suivante nest pas occupee et n'est pas une base
-         getCase(posActuelle)->deleteUnite(); //on supprime l'unite de la case où elle etait
-         u->avancer(pas);
-         getCase(next)->setUnite(u);
+    if(!getCase(next)->estOccupee() && next!=0 && next!=11)  //la case suivante nest pas occupee et n'est pas une base
+    {
+        getCase(posActuelle)->deleteUnite(); //on supprime l'unite de la case où elle etait
+        u->avancer(pas);
+        getCase(next)->setUnite(u);
     }
-    else{
+    else
+    {
         std::cout<<"ne peut pas avancer"<<std::endl;
     }
 }

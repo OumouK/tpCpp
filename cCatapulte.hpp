@@ -3,9 +3,10 @@
 
 #include "cUnite.hpp"
 
-class Catapulte : public Unite{
+class Catapulte : public Unite
+{
 public:
-    Catapulte(): Unite(20, 12, 6,"Catapulte", 3){ std::vector<int> v{2,3}; m_portee=v;};
+    Catapulte(): Unite(20, 12, 6,"Catapulte", 3) {};
 
 };
 #endif // UNITE_H_INCLUDED

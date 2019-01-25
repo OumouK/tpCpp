@@ -3,9 +3,10 @@
 
 #include"cUnite.hpp"
 
-class Fantassin : public Unite{
+class Fantassin : public Unite
+{
 public:
-    Fantassin(): Unite(10, 10, 4, "Fantassin", 1){ std::vector<int> v{1}; m_portee=v;};
+    Fantassin(): Unite(10, 10, 4, "Fantassin", 1) {};
 
 };
 #endif // UNITE_H_INCLUDED

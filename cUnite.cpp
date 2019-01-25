@@ -24,10 +24,6 @@ int Unite::getNbEssais(){
     return m_nbEssais;
 }
 
-std::vector<int> Unite::getPortee(){
-    return m_portee;
-}
-
 void Unite::setPrix(int p){
     m_prix=p;
 }
@@ -45,6 +41,10 @@ void Unite::setPosition(int p){
 
 void Unite::setBase(int b){
     m_base=b;
+}
+
+void Unite::setType(std::string s){
+m_sonType=s;
 }
 
 int Unite::getBase(){
@@ -69,17 +69,6 @@ bool Unite::getAttaque(){
     return attaque;
 }
 
-/*void Unite::attaquer(Aire * a, int pas){
-std::cout<<"j'attaque "<<m_position<<std::endl;
-if(a[m_position+pas]->estOccupee()){
-        Unite* ptr_ennemi=a[m_position+pas]->getUnite();
-        ptr_ennemi->setPtV(ptr_ennemi->getPtV()-m_pointAttaque);
-        if(ptr_ennemi->getPtV()<=0){
-            delete ptr_ennemi;
-        }
-}
-
-}*/
 
 
 
