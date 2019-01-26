@@ -9,11 +9,9 @@ class Base : public Case
 public:
     Base(int pt, int i): Case(i), m_pointVie(pt) {};
     ~Base(){};
-    void afficheCase();
     int getPtV();
     void setPtV(int p);
 
 };
 
 #endif // CBASE_H
-

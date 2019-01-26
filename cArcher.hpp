@@ -3,10 +3,9 @@
 
 #include"cUnite.hpp"
 
-class Archer : public Unite
-{
+class Archer : public Unite{
 public:
-    Archer(): Unite(12, 8, 3,"Archer",3) {};
+    Archer(): Unite(12, 8, 3,"Archer",3){};
 
 };
 #endif // UNITE_H_INCLUDED

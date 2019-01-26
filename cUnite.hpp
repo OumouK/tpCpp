@@ -10,8 +10,7 @@
 class Case;
 
 
-class Unite
-{
+class Unite{
 
 protected:
     int m_prix;
@@ -23,23 +22,22 @@ protected:
     bool attaque; //dire si l'unite a attaque ou pas
     int m_nbEssais;
 
-
 public:
-    Unite():m_prix(0),m_pointVie(0),m_pointAttaque(0),m_position(0),m_base(0),m_sonType("Unite"),attaque(false), m_nbEssais(0) {}/*{ m_portee= {0};}*/;
-    Unite(int p, int ptV, int ptAt, std::string type, int n):m_prix(p),m_pointVie(ptV), m_pointAttaque(ptAt),m_position(-1),m_base(-1), m_sonType(type), attaque(false), m_nbEssais(n) {};
+    Unite():m_prix(0),m_pointVie(0),m_pointAttaque(0),m_position(0),m_base(0),m_sonType("Unite"),attaque(false), m_nbEssais(0){};
+    Unite(int p, int ptV, int ptAt, std::string type, int n):m_prix(p),m_pointVie(ptV), m_pointAttaque(ptAt),m_position(-1),m_base(-1), m_sonType(type), attaque(false), m_nbEssais(n){};
     int getPrix();
-    int getPtV();
     int getPtAt();
+    int getPtV();
     int getPosition();
     int getBase();
     int getNbEssais();
     std::string getType();
+    void setType(std::string t);
     void setPrix(int p);
     void setPtV(int p);
     void setPtAt(int p);
     void setPosition(int p);
     void setBase(int b);
-    void setType(std::string s);
     void setAttaque(bool b);
     bool getAttaque();
     void avancer(int p);

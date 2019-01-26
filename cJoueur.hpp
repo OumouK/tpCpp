@@ -13,38 +13,35 @@ class Joueur
     std::string m_nom;
     std::vector<Unite*> m_sesUnites;
     int m_sesPieces;
-    bool m_tour;
+    int m_ptVie;
+    bool m_victoire;
     int m_saBase;
     int pas;
 
-public:
-    Joueur(std::string nom,int i, Aire *a): aire(a),m_nom(nom),m_sesPieces(160),m_tour(false),m_saBase(i)
-    {
-        if(i==0)
-        {
-            pas=1;
-        }
-        else
-        {
-            pas=-1;
-        }
-    };
-    ~Joueur() {/*delete aire;*/}
-    bool estTour();
-    void setTour();
-    void setBase(int c);
-    int getBase();
-    std::vector<Unite*> getUnites();
-    void creeUnite(Unite* u);
-    void creeUnite();
-    void avancer(Unite* u);
-    void phase1();
-    void phase2();
-    void phase3();
-    void miseAJour();
-    void initPhase();
-    bool tentativeAtt(Unite* u, int n);
-    void tour();
+    public:
+        Joueur(std::string nom,int i, Aire *a): aire(a),m_nom(nom),m_sesPieces(8),m_ptVie(100),m_victoire(false),m_saBase(i){ if(i==0) {pas=1;} else{
+        pas=-1;}};
+        ~Joueur(){/*delete aire;*/}
+        bool estGagnant();
+        void setGagnant();
+        std::string getNom();
+        int getBase();
+        int getPieces();
+        std::vector<Unite*> getUnites();
+        void creeUnite(Unite* u);
+        void creeUnite();
+        void phase2();
+        void phase3();
+        void phase1();
+        void miseAJour();
+        void initPhase();
+        void tentativeAtt(Unite* u, int n);
+        void tour(Joueur * ennemi);
+        void affiche();
+        void affiche(Joueur * ennemi);
+        void demandeCreationUnite();
+
+
 
 
 };

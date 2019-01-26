@@ -3,10 +3,9 @@
 
 #include "cUnite.hpp"
 
-class Catapulte : public Unite
-{
+class Catapulte : public Unite{
 public:
-    Catapulte(): Unite(20, 12, 6,"Catapulte", 3) {};
+    Catapulte(): Unite(20, 12, 6,"Catapulte", 3){};
 
 };
 #endif // UNITE_H_INCLUDED

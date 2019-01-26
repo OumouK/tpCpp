@@ -24,6 +24,7 @@ int Unite::getNbEssais(){
     return m_nbEssais;
 }
 
+
 void Unite::setPrix(int p){
     m_prix=p;
 }
@@ -43,16 +44,12 @@ void Unite::setBase(int b){
     m_base=b;
 }
 
-void Unite::setType(std::string s){
-m_sonType=s;
-}
-
 int Unite::getBase(){
     return m_base;
 }
 
 void Unite::affiche(){
-    std::cout << m_sonType << std::endl;
+    std::cout <<"\t"<< m_sonType <<" : \n\t\tCase "<<m_position<<"\n\t\tPoints de vie restants : "<<m_pointVie << std::endl;
 
 }
 
@@ -65,10 +62,25 @@ void Unite::setAttaque(bool b){
 
 }
 
+void Unite::setType(std::string t){
+    m_sonType=t;
+}
+
 bool Unite::getAttaque(){
     return attaque;
 }
 
+/*void Unite::attaquer(Aire * a, int pas){
+std::cout<<"j'attaque "<<m_position<<std::endl;
+if(a[m_position+pas]->estOccupee()){
+        Unite* ptr_ennemi=a[m_position+pas]->getUnite();
+        ptr_ennemi->setPtV(ptr_ennemi->getPtV()-m_pointAttaque);
+        if(ptr_ennemi->getPtV()<=0){
+            delete ptr_ennemi;
+        }
+}
+
+}*/
 
 
 
