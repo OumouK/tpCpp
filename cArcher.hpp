@@ -6,6 +6,7 @@
 class Archer : public Unite{
 public:
     Archer(): Unite(12, 8, 3,"Archer",3){};
+    void aff();
 
 };
 #endif // UNITE_H_INCLUDED

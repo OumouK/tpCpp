@@ -42,6 +42,7 @@ public:
     bool getAttaque();
     void avancer(int p);
     void affiche();
+    virtual void aff()=0;
 };
 
 #endif // UNITE_H_INCLUDED
