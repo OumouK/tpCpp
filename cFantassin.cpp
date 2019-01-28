@@ -3,4 +3,3 @@
 void Fantassin::aff(){
     std::cout <<"F";
 }
-

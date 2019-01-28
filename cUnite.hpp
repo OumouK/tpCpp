@@ -42,7 +42,7 @@ public:
     bool getAttaque();
     void avancer(int p);
     void affiche();
-    virtual void aff()=0;
+     virtual void aff()=0; //classe abstraite
 };
 
 #endif // UNITE_H_INCLUDED

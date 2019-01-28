@@ -3,7 +3,6 @@
 
 
 Case::~Case(){
-    //delete ptr_sonUnite;
 }
 
 bool Case::estOccupee(){
@@ -41,19 +40,11 @@ Unite* Case::getUnite(){
 
 void Case::afficheCase(){
 
-    /*std::cout <<"\n   "<<m_saPosition<<"   ";
-    if(m_occupee){
-        std::cout << "Case occupee ";
-        ptr_sonUnite->affiche();
-    }*/
-    //for(int i=0;i<6; i++){
-       // std::cout<<" _____\n|   "<<m_saPosition<<"  |\n|    |\n"<<std::endl;
-
-    //}
     if(m_occupee){
         //on affiche son unite
-        char l=ptr_sonUnite->getType()[0];
-        std::cout<<"|  "<<l<<((ptr_sonUnite->getBase()==0)?"o":"x")<<"  | ";
+        std::cout<<"|  ";
+        ptr_sonUnite->aff();
+        std::cout<<((ptr_sonUnite->getBase()==0)?"o":"x")<<"  | ";
 
     }else{
         std::cout<<"|      | "; //case vide

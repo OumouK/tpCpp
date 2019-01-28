@@ -21,14 +21,14 @@ class Joueur
     public:
         Joueur(std::string nom,int i, Aire *a): aire(a),m_nom(nom),m_sesPieces(8),m_ptVie(100),m_victoire(false),m_saBase(i){ if(i==0) {pas=1;} else{
         pas=-1;}};
-        ~Joueur(){/*delete aire;*/}
+        ~Joueur(){}
         bool estGagnant();
         void setGagnant();
         std::string getNom();
         int getBase();
         int getPieces();
         std::vector<Unite*> getUnites();
-        void creeUnite(Unite* u);
+        bool creeUnite(Unite* u);
         void creeUnite();
         void phase2();
         void phase3();
@@ -36,10 +36,10 @@ class Joueur
         void miseAJour();
         void initPhase();
         void tentativeAtt(Unite* u, int n);
-        void tour(Joueur * ennemi);
+        bool tour(Joueur * ennemi);
         void affiche();
         void affiche(Joueur * ennemi);
-        void demandeCreationUnite();
+        bool demandeCreationUnite();
 
 
 

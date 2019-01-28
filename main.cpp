@@ -10,12 +10,12 @@
 void nouvellePartie(){
 
 
-    Aire *a=new Aire();
+    Aire *a=new Aire(12);
     int rep;
     std::string reponse="";
     Joueur * j1;
     Joueur * j2;
-    std::cout<<"\t/***************************************BIENVENU(E) DANS WORLD OF WAR***************************************/\n\tChoississez un mode de jeu : 1) Humain vs. Humain 2)Humain vs. IA : ";
+    std::cout<<"\t/***************************************BIENVENU(E) DANS AGE OF WAR***************************************/\n\tChoississez un mode de jeu : 1) Humain vs. Humain 2)Humain vs. IA : ";
     std::cin>>rep;
     if(rep==1){
         std::cout<<"\tRentrez le nom du premier joueur : ";
@@ -34,26 +34,31 @@ void nouvellePartie(){
         j2=new Joueur("IA",a->getSesCases().size()-1, a);
     }
     //affichage(j1,j2,a);
-    int cpt=0;
-    bool tourJoueur1=true;
-    while(/*cpt<100 && */!j1->estGagnant() && !j2->estGagnant()){
+    int cpt=0, n=1000;
+    bool tourJoueur1=true, q=false;
+    while(cpt<n && !j1->estGagnant() && !j2->estGagnant() && !q){
 
             //std::cout>>"
             if(tourJoueur1){
-                j1->tour(j2);
+                q=j1->tour(j2);
                 tourJoueur1=false;
-                continue;
+                //continue;
+            }else{
+                q=j2->tour(j1);
+                tourJoueur1=true;
             }
 
-    j2->tour(j1);
-    tourJoueur1=true;
 
         cpt++;
     }
-    if(cpt!=100){
+    system("cls");
+    if(q){
+        std::cout<<"\tVous avez quittez le jeu en cours.\n";
+    }
+    else if(cpt!=n){
         std::cout<<"\t"<<((j1->estGagnant())?j1->getNom():j2->getNom())<<" a gagne la partie !!!!!!\n";
 
-    }else{
+    }else {
         std::cout<<"\tLa partie s est terminee avant que l un des deux joueurs ne gagnent. Dommage !\n";
 
     }
@@ -114,6 +119,7 @@ int main()
         nouvellePartie();
         std::cout<<"\tSouhaitez vous recommencer ? o: oui sinon nimporte quelle touche ";
         std::cin>>recommencer;
+        system("cls");
 
     }while(recommencer=="o");
 

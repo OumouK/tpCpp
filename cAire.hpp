@@ -9,11 +9,12 @@ class Aire
 {
     std::vector<Case*> m_sesCases;
 
+
     public:
-        Aire(){initCases();}
+        Aire(int taille){initCases(taille);}
         Case* getCase(int i);
         std::vector<Case*> getSesCases();
-        void initCases();
+        void initCases(int taille);
         void afficheJeu();
         void afficheJoueur();
         void affiche();

@@ -6,7 +6,8 @@
 class Catapulte : public Unite{
 public:
     Catapulte(): Unite(20, 12, 6,"Catapulte", 3){};
-     void aff();
+    void aff();
+
 };
 #endif // UNITE_H_INCLUDED
 
